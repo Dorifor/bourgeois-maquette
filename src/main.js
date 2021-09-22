@@ -10,7 +10,7 @@ const app = createApp(App).use(router);
 
 app.use(BalmUI, {
   $theme: {
-    
+    primary: '#75be00'
   }
 });
 app.use(BalmUIPlus);

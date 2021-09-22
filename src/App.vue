@@ -1,7 +1,7 @@
 <template>
   <!-- <ui-top-app-bar class="top-bar" :nav-icon="false">Platea</ui-top-app-bar> -->
   <div class="info">
-    <ui-icon>information</ui-icon>
+    <ui-icon :size="iconSize">information</ui-icon>
   </div>
   <nav class="top-nav">
     <h2>LOGO PLATEA</h2>
@@ -10,22 +10,22 @@
     <div class="nav-content">
       <div class="nav-item">
         <router-link to="/">
-          <ui-icon>search</ui-icon>
+          <ui-icon :size="iconSize">search</ui-icon>
         </router-link>
       </div>
       <div class="nav-item">
         <router-link to="/inventory">
-          <ui-icon>inventory_2</ui-icon>
+          <ui-icon :size="iconSize">inventory_2</ui-icon>
         </router-link>
       </div>
       <div class="nav-item" to="/settings">
         <router-link to="/settings">
-          <ui-icon>settings</ui-icon>
+          <ui-icon :size="iconSize">settings</ui-icon>
         </router-link>
       </div>
       <div class="nav-item" to="/summary">
         <router-link to="/summary">
-          <ui-icon>summarize</ui-icon>
+          <ui-icon :size="iconSize">summarize</ui-icon>
         </router-link>
       </div>
     </div>
@@ -35,6 +35,16 @@
     <router-view />
   </main>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      iconSize: 36
+    }
+  }
+}
+</script>
 
 <style>
 body,
@@ -55,8 +65,12 @@ html {
 
 .info .material-icons {
   margin: auto;
-  font-size: 3em;
   color: #75be00;
+}
+
+nav .material-icons {
+  padding: 0.3em;
+  border-radius: 10px;
 }
 
 main {
@@ -121,16 +135,13 @@ nav.top-nav {
   /* flex: 1; */
 }
 
-nav .material-icons {
-  font-size: 3em;
-}
-
 a {
   font-weight: bold;
   color: #75be00;
 }
 
-a.router-link-exact-active {
-  color: #75be00;
+a.router-link-exact-active .material-icons {
+  background: white;
+  box-shadow: 0 2px 2px rgba(128, 128, 128, 0.25);
 }
 </style>
