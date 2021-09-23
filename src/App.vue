@@ -63,6 +63,13 @@ html {
   width: 50%;
 }
 
+.material-icons {
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */
+}
+
 .info .material-icons {
   margin: auto;
   color: #75be00;
@@ -74,11 +81,11 @@ nav .material-icons {
 }
 
 main {
-  padding: 4em;
+  padding: 4em 4em 0 4em;
   /* height: 100%; */
   grid-area: content;
   background: #f4f4f4;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 ui-grid {
@@ -138,10 +145,12 @@ nav.top-nav {
 a {
   font-weight: bold;
   color: #75be00;
+  transition: 0.2s;
 }
 
 a.router-link-exact-active .material-icons {
   background: white;
   box-shadow: 0 2px 2px rgba(128, 128, 128, 0.25);
+  transition: 0.2s;
 }
 </style>
