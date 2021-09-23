@@ -9,22 +9,25 @@
   <nav class="side-nav">
     <div class="nav-content">
       <div class="nav-item">
-        <router-link to="/">
+        <router-link
+          to="/"
+          :class="!['/inventory', '/settings', '/summary'].includes($route.path) ? 'router-link-exact-active' : ''"
+        >
           <ui-icon :size="iconSize">search</ui-icon>
         </router-link>
       </div>
       <div class="nav-item">
-        <router-link to="/inventory">
+        <router-link exact to="/inventory">
           <ui-icon :size="iconSize">inventory_2</ui-icon>
         </router-link>
       </div>
-      <div class="nav-item" to="/settings">
-        <router-link to="/settings">
+      <div class="nav-item">
+        <router-link exact to="/settings">
           <ui-icon :size="iconSize">settings</ui-icon>
         </router-link>
       </div>
-      <div class="nav-item" to="/summary">
-        <router-link to="/summary">
+      <div class="nav-item">
+        <router-link exact to="/summary">
           <ui-icon :size="iconSize">summarize</ui-icon>
         </router-link>
       </div>
@@ -32,7 +35,9 @@
   </nav>
   <main>
     <!-- Content -> Router View -->
-    <router-view />
+    <transition name="component-fade" mode="out-in">
+      <router-view />
+    </transition>
   </main>
 </template>
 

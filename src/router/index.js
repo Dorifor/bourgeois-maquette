@@ -1,11 +1,11 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Accueil from '../views/Accueil.vue'
-import Inventory from '../views/Inventory.vue';
-import Settings from '../views/Settings.vue';
-import Summary from '../views/Summary.vue';
-// import Produit from '../views/Produit.vue';
-import AccueilBase from '../views/accueil/AccueilBase.vue';
-import AccueilSearch from '../views/accueil/AccueilSearch.vue';
+import Accueil from '@/views/Accueil.vue'
+import Inventory from '@/views/Inventory.vue';
+import Settings from '@/views/Settings.vue';
+import Summary from '@/views/Summary.vue';
+// import Produit from '@/views/Produit.vue';
+import AccueilBase from '@/views/accueil/AccueilBase.vue';
+import AccueilSearch from '@/views/accueil/AccueilSearch.vue';
 
 const routes = [
   {
@@ -50,7 +50,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
 })
 
 export default router

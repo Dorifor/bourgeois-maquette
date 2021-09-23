@@ -10,32 +10,21 @@
     />
     <ui-icon class="search-icon" size="36">search</ui-icon>
   </div>
-
-  <ul v-if="source.length > 0">
-    <li v-for="produit in source" :key="produit.slug">{{ produit.slug }} : {{ produit.libelle }}</li>
-  </ul>
   <hr />
-  <router-view></router-view>
+  <router-view :keywords="keywords"></router-view>
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   data() {
     return {
-      keywords: '',
-      source: [],
+      keywords: ''
     }
   },
   methods: {
     handleSearch() {
       if (this.keywords) {
-        axios.get(`http://localhost:1337/produits?slug_contains=${this.keywords}`)
-          .then(res => this.source = res.data)
-          .catch(err => console.log(err));
-
-        this.$router.push(`/search/${this.keywords}`)
+        this.$router.push(`search`)
       } else {
         this.source = [];
         this.$router.push("/");
