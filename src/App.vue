@@ -4,14 +4,14 @@
     <ui-icon :size="iconSize">information</ui-icon>
   </div>
   <nav class="top-nav">
-    <h2>LOGO PLATEA</h2>
+    <!-- <h2>LOGO PLATEA</h2> -->
+    <img src="/logo platea.png" alt="logo platea">
   </nav>
   <nav class="side-nav">
     <div class="nav-content">
       <div class="nav-item">
         <router-link
           to="/"
-          :class="!['/inventory', '/settings', '/summary'].includes($route.path) ? 'router-link-exact-active' : ''"
         >
           <ui-icon :size="iconSize">search</ui-icon>
         </router-link>
@@ -35,9 +35,7 @@
   </nav>
   <main>
     <!-- Content -> Router View -->
-    <transition name="component-fade" mode="out-in">
-      <router-view />
-    </transition>
+    <router-view></router-view>
   </main>
 </template>
 
@@ -135,6 +133,11 @@ nav.top-nav {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   text-align: left;
   padding-left: 1em;
+}
+
+nav.top-nav img {
+  height: 5em;
+  /* margin: auto; */
 }
 
 .nav-content {

@@ -86,6 +86,7 @@ export default {
     "declare declare history";
   gap: 2em;
   padding: 2em;
+  transition: opacity 0.4s ease;
 }
 
 .grid-accueil section {
