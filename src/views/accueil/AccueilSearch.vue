@@ -8,7 +8,7 @@
         tag="div"
         @click="handleClickProduit(produit.slug)"
       >
-        <img :src="`https://vast-sierra-58762.herokuapp.com${produit.plans[0].url}`" :alt="produit.plans[0].name" />
+        <img :src="`https://bourgeois-eu.herokuapp.com${produit.plans[0].url}`" :alt="produit.plans[0].name" />
         <div class="produit-content">
           <h4>{{ produit.slug }} - {{ produit.libelle }}</h4>
           <p>{{ produit.description.slice(0, 120) }}...</p>

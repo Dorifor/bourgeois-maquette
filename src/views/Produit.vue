@@ -18,7 +18,7 @@
       <hr class="divider" />
       <img
         v-for="plan in produit.plans"
-        :src="`https://vast-sierra-58762.herokuapp.com${plan.url}`"
+        :src="`https://bourgeois-eu.herokuapp.com${plan.url}`"
         :alt="`plan numero ${plan.id}`"
         :key="plan.id"
       />
@@ -46,7 +46,7 @@ export default {
   },
   mounted() {
     const slug = this.$route.params.slug;
-    axios.get(`https://vast-sierra-58762.herokuapp.com/produits?slug=${slug}`)
+    axios.get(`https://bourgeois-eu.herokuapp.com/produits?slug=${slug}`)
       .then(res => {
         this.produit = res.data[0];
         this.cdc = this.produit.cahier_des_charges;
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     handleClickFile(url) {
-      window.open(`https://vast-sierra-58762.herokuapp.com${url}`)
+      window.open(`https://bourgeois-eu.herokuapp.com${url}`)
     }
   }
 }

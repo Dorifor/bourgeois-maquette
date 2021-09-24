@@ -43,7 +43,7 @@ export default {
       }
     },
     fetchProduits(filter) {
-      axios.get(`https://vast-sierra-58762.herokuapp.com/produits?slug_contains=${filter}`)
+      axios.get(`https://bourgeois-eu.herokuapp.com/produits?slug_contains=${filter}`)
         .then(res => {
           console.log(res.data)
           this.fetchedProduits = res.data
