@@ -5,7 +5,7 @@
   </div>
   <nav class="top-nav">
     <!-- <h2>LOGO PLATEA</h2> -->
-    <img src="/logo platea.png" alt="logo platea">
+    <img src="https://github.com/Dorifor/bourgeois-maquette/raw/master/public/logo%20platea.png" alt="logo platea">
   </nav>
   <nav class="side-nav">
     <div class="nav-content">
