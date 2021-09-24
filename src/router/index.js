@@ -31,11 +31,11 @@ const routes = [
     name: "Produit",
     component: Produit,
   },
-  {
-    path: "*",
-    name: "catchAll",
-    component: Accueil,
-  },
+  // {
+  //   path: "*",
+  //   name: "catchAll",
+  //   component: Accueil,
+  // },
 ];
 
 const router = createRouter({
