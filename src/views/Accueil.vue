@@ -5,7 +5,7 @@
       type="text"
       class="search-bar"
       v-model="keywords"
-      placeholder="Une référence, un interlocuteur, une commande..."
+      placeholder="Une référence (A001, B002, ...), un interlocuteur, une commande..."
       @input="handleSearch"
     />
     <ui-icon class="search-icon" size="36">search</ui-icon>
