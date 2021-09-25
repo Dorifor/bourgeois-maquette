@@ -11,7 +11,17 @@
         frameborder="0"
         width="100%"
         height="480"
-      ></iframe> -->
+      ></iframe>-->
+      <model-viewer
+        src="/drill.glb"
+        alt="A 3D model of an astronaut"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        environment-image="neutral"
+        auto-rotate
+        camera-controls
+        orientation="0 0 180"
+      ></model-viewer>
     </section>
     <section class="documents">
       <h4>Plans</h4>
@@ -93,6 +103,7 @@ export default {
 }
 
 main {
+  padding: 0;
   padding-top: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -122,6 +133,11 @@ hr.divider {
   margin-top: 3em;
 }
 
+model-viewer {
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (max-width: 400px) {
   main {
     display: flex;
@@ -131,6 +147,10 @@ hr.divider {
     max-width: 100vw;
     margin-bottom: 6em;
     gap: unset;
+  }
+
+  model-viewer {
+    height: 400px;
   }
 
   .documents {
