@@ -8,7 +8,7 @@
         tag="div"
         @click="handleClickProduit(produit.slug)"
       >
-        <img :src="`https://vast-sierra-58762.herokuapp.com${produit.plans[0].url}`" :alt="produit.plans[0].name" />
+        <img :src="`http://192.168.0.11:1337${produit.plans[0].url}`" :alt="produit.plans[0].name" />
         <div class="produit-content">
           <h4>{{ produit.slug }} - {{ produit.libelle }}</h4>
           <p>{{ produit.description.slice(0, 120) }}...</p>
@@ -48,6 +48,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   transition: opacity 0.2s ease;
+  margin-bottom: 5em;
 }
 
 .produit {
@@ -72,6 +73,7 @@ export default {
 
 .produit img {
   width: 400px;
+  max-width: 80vw;
 }
 
 .produit .arrow-icon {

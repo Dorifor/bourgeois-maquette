@@ -115,6 +115,7 @@ ui-grid {
 }
 
 nav.main-nav {
+  z-index: 999;
   grid-area: main-nav;
   display: flex;
   flex-direction: column;
@@ -168,16 +169,24 @@ a.router-link-exact-active .material-icons {
       "info top-nav"
       "content content"
     ;
-    margin-bottom: ;
+    margin-bottom: 4em;
+  }
+
+  main {
+    padding: 0;
   }
 
   nav.main-nav {
     position: fixed;
     bottom: 0;
     flex-direction: row;
+    align-items: center;
     gap: unset;
-    height: auto;
+    height: 5em;
     width: 100%;
+    overflow-y: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   .nav-content {
@@ -185,9 +194,9 @@ a.router-link-exact-active .material-icons {
     gap: unset;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 4em;
-    padding: .2em 0;
+    padding: 0;
   }
 }
 </style>

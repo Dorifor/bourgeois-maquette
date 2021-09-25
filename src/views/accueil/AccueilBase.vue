@@ -90,6 +90,7 @@ export default {
 }
 
 .grid-accueil section {
+  max-width: 90vw;
   text-align: left;
   padding: 1em;
   display: flex;
@@ -227,5 +228,20 @@ export default {
 
 .mdc-select {
   flex: 1;
+}
+
+@media screen and (max-width: 400px) {
+  .grid-accueil {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .grid-accueil section {
+    width: 80vw;
+    max-width: 80vw;
+  }
 }
 </style>

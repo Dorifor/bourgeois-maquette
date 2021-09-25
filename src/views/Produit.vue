@@ -5,20 +5,20 @@
       <hr />
       <p>{{ produit.description }}</p>
       <h3>prix : {{ produit.prix }}€</h3>
-      <iframe
+      <!-- <iframe
         id="d6c1f27d-6a27-4c7e-bd7d-bd19d7faa56c"
         src="https://www.vectary.com/viewer/v1/?model=d6c1f27d-6a27-4c7e-bd7d-bd19d7faa56c&turntable=-2"
         frameborder="0"
         width="100%"
         height="480"
-      ></iframe>
+      ></iframe> -->
     </section>
     <section class="documents">
       <h4>Plans</h4>
       <hr class="divider" />
       <img
         v-for="plan in produit.plans"
-        :src="`https://vast-sierra-58762.herokuapp.com${plan.url}`"
+        :src="`http://192.168.0.11:1337${plan.url}`"
         :alt="`plan numero ${plan.id}`"
         :key="plan.id"
       />
@@ -46,7 +46,7 @@ export default {
   },
   mounted() {
     const slug = this.$route.params.slug;
-    axios.get(`https://vast-sierra-58762.herokuapp.com/produits?slug=${slug}`)
+    axios.get(`http://192.168.0.11:1337/produits?slug=${slug}`)
       .then(res => {
         this.produit = res.data[0];
         this.cdc = this.produit.cahier_des_charges;
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     handleClickFile(url) {
-      window.open(`https://vast-sierra-58762.herokuapp.com${url}`)
+      window.open(`http://192.168.0.11:1337${url}`)
     }
   }
 }
@@ -120,5 +120,25 @@ hr.divider {
 
 .documents h4 {
   margin-top: 3em;
+}
+
+@media screen and (max-width: 400px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    max-width: 100vw;
+    margin-bottom: 6em;
+    gap: unset;
+  }
+
+  .documents {
+    margin: 1em;
+  }
+
+  p {
+    margin: 1em;
+  }
 }
 </style>
