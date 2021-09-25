@@ -13,7 +13,7 @@
         height="480"
       ></iframe>-->
       <model-viewer
-        src="/drill.glb"
+        src="https://github.com/Dorifor/bourgeois-maquette/raw/master/public/drill.glb"
         alt="A 3D model of an astronaut"
         ar
         ar-modes="webxr scene-viewer quick-look"
