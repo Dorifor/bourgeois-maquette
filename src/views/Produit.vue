@@ -13,7 +13,7 @@
         height="480"
       ></iframe>-->
       <model-viewer
-        src="https://github.com/Dorifor/bourgeois-maquette/raw/master/public/drill.glb"
+        :src="`${publicPath}drill.glb`"
         alt="A 3D model of an astronaut"
         ar
         ar-modes="webxr scene-viewer quick-look"
@@ -51,7 +51,8 @@ export default {
   data() {
     return {
       produit: {},
-      cdc: []
+      cdc: [],
+      publicPath: process.env.BASE_URL
     }
   },
   mounted() {

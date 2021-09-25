@@ -5,7 +5,7 @@
   </div>
   <nav class="top-nav">
     <!-- <h2>LOGO PLATEA</h2> -->
-    <img src="https://github.com/Dorifor/bourgeois-maquette/raw/master/public/logo%20platea.png" alt="logo platea">
+    <img :src="`${publicPath}logo platea.png`" alt="logo platea">
   </nav>
   <nav class="main-nav">
     <div class="nav-content">
@@ -43,7 +43,8 @@
 export default {
   data() {
     return {
-      iconSize: 36
+      iconSize: 36,
+      publicPath: process.env.BASE_URL
     }
   }
 }
