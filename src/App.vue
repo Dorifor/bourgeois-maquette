@@ -7,7 +7,7 @@
     <!-- <h2>LOGO PLATEA</h2> -->
     <img src="https://github.com/Dorifor/bourgeois-maquette/raw/master/public/logo%20platea.png" alt="logo platea">
   </nav>
-  <nav class="side-nav">
+  <nav class="main-nav">
     <div class="nav-content">
       <div class="nav-item">
         <router-link
@@ -110,12 +110,13 @@ ui-grid {
   grid-template-rows: 5em 1fr;
   grid-template-areas:
     "info top-nav"
-    "side-nav content";
+    "main-nav content";
   height: 100%;
 }
 
-nav.side-nav {
-  grid-area: side-nav;
+nav.main-nav {
+  z-index: 999;
+  grid-area: main-nav;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -146,7 +147,7 @@ nav.top-nav img {
   flex-direction: column;
   justify-content: flex-start;
   gap: 3em;
-  height: 100%;
+  height: auto;
   /* flex: 1; */
 }
 
@@ -160,5 +161,42 @@ a.router-link-exact-active .material-icons {
   background: white;
   box-shadow: 0 2px 2px rgba(128, 128, 128, 0.25);
   transition: 0.2s;
+}
+
+@media screen and (max-width: 400px) {
+  #app {
+    grid-template-areas: 
+      "info top-nav"
+      "content content"
+    ;
+    margin-bottom: 4em;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  nav.main-nav {
+    position: fixed;
+    bottom: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: unset;
+    height: 5em;
+    width: 100%;
+    overflow-y: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .nav-content {
+    flex-direction: row;
+    gap: unset;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 4em;
+    padding: 0;
+  }
 }
 </style>

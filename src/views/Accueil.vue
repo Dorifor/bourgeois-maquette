@@ -4,9 +4,9 @@
     <input
       type="text"
       class="search-bar"
-      v-model="keywords"
-      placeholder="Une référence (A001, B002, ...), un interlocuteur, une commande..."
-      @input="handleSearch"
+      :placeholder="innerWidth > 400 ? `Une référence, un interlocuteur, une commande...` : `Rechercher...`"
+      :value="keywords"
+      @input="e => handleSearch(e)"
     />
     <ui-icon class="search-icon" size="36">search</ui-icon>
   </div>
@@ -30,11 +30,13 @@ export default {
   data() {
     return {
       keywords: '',
-      fetchedProduits: []
+      fetchedProduits: [],
+      innerWidth: window.innerWidth
     }
   },
   methods: {
-    handleSearch() {
+    handleSearch(e) {
+      this.keywords = e.target.value;
       if (this.keywords) {
         // console.log(this.keywords)
         this.fetchProduits(this.keywords)
@@ -79,7 +81,7 @@ export default {
 }
 
 .search-bar {
-  width: 50em;
+  width: 50vw;
   border-radius: 3em;
   border: none;
   background-color: white !important;

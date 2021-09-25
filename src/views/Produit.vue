@@ -5,13 +5,13 @@
       <hr />
       <p>{{ produit.description }}</p>
       <h3>prix : {{ produit.prix }}€</h3>
-      <iframe
+      <!-- <iframe
         id="d6c1f27d-6a27-4c7e-bd7d-bd19d7faa56c"
         src="https://www.vectary.com/viewer/v1/?model=d6c1f27d-6a27-4c7e-bd7d-bd19d7faa56c&turntable=-2"
         frameborder="0"
         width="100%"
         height="480"
-      ></iframe>
+      ></iframe> -->
     </section>
     <section class="documents">
       <h4>Plans</h4>
@@ -120,5 +120,25 @@ hr.divider {
 
 .documents h4 {
   margin-top: 3em;
+}
+
+@media screen and (max-width: 400px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    max-width: 100vw;
+    margin-bottom: 6em;
+    gap: unset;
+  }
+
+  .documents {
+    margin: 1em;
+  }
+
+  p {
+    margin: 1em;
+  }
 }
 </style>

@@ -48,6 +48,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   transition: opacity 0.2s ease;
+  margin-bottom: 5em;
 }
 
 .produit {
@@ -72,6 +73,7 @@ export default {
 
 .produit img {
   width: 400px;
+  max-width: 80vw;
 }
 
 .produit .arrow-icon {
