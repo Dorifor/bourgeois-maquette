@@ -1,6 +1,10 @@
 <template>
   <transition name="fade" mode="out-in">
     <main class="search-grid" :key="$props.keywords">
+      <ui-spinner active v-if="loading"></ui-spinner>
+      <section class="notice" v-if="noData">
+        <h3>Désolé... Je n'ai rien trouvé !</h3>
+      </section>
       <section
         v-for="produit in $props.produitsListe"
         class="produit"
@@ -8,12 +12,16 @@
         tag="div"
         @click="handleClickProduit(produit.slug)"
       >
-        <img :src="`https://bourgeois-eu.herokuapp.com${produit.plans[0].url}`" :alt="produit.plans[0].name" />
+        <img
+          :src="`https://bourgeois-eu.herokuapp.com${produit.plans[0].url}`"
+          :alt="produit.plans[0].name"
+        />
         <div class="produit-content">
           <h4>{{ produit.slug }} - {{ produit.libelle }}</h4>
           <p>{{ produit.description.slice(0, 120) }}...</p>
         </div>
         <ui-icon size="12" class="arrow-icon">arrow_forward</ui-icon>
+        <!-- <ui-spinner active></ui-spinner> -->
       </section>
     </main>
   </transition>
@@ -23,7 +31,9 @@
 export default {
   props: {
     produitsListe: Array,
-    keywords: String
+    keywords: String,
+    loading: Boolean,
+    noData: Boolean
   },
   methods: {
     handleClickProduit(slug) {
@@ -34,6 +44,16 @@ export default {
 </script>
 
 <style scoped>
+
+.notice {
+  background-color: #ac405240;
+  color: crimson;
+  padding: 1em;
+  border-radius: 10px;
+  border: 1px solid #ac4052;
+  opacity: .5;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   opacity: 0;
@@ -78,8 +98,8 @@ export default {
 
 .produit .arrow-icon {
   position: absolute;
-  bottom: .5em;
-  right: .5em;
+  bottom: 0.5em;
+  right: 0.5em;
   color: #75be00;
 }
 </style>

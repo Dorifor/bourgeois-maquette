@@ -13,7 +13,13 @@
   <hr />
   <!-- <router-view :keywords="keywords"></router-view> -->
   <transition name="fade" mode="out-in">
-    <component :is="keywords ? 'AccueilSearch' : 'AccueilBase'" :produits-liste="fetchedProduits" :keywords="keywords"></component>
+    <component
+      :is="keywords ? 'AccueilSearch' : 'AccueilBase'"
+      :produits-liste="fetchedProduits"
+      :keywords="keywords"
+      :loading="loading"
+      :noData="noData"
+    ></component>
   </transition>
 </template>
 
@@ -31,7 +37,9 @@ export default {
     return {
       keywords: '',
       fetchedProduits: [],
-      innerWidth: window.innerWidth
+      innerWidth: window.innerWidth,
+      loading: true,
+      noData: false
     }
   },
   methods: {
@@ -48,6 +56,8 @@ export default {
       axios.get(`https://bourgeois-eu.herokuapp.com/produits?slug_contains=${filter}`)
         .then(res => {
           console.log(res.data)
+          this.loading = false
+          this.noData = res.data.length == 0;
           this.fetchedProduits = res.data
         }
         )
